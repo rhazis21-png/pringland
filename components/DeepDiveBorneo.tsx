@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   MapPin, 
@@ -6,7 +7,9 @@ import {
   ShieldCheck,
   Smartphone,
   Video,
-  Map
+  Map,
+  Users,
+  Camera
 } from 'lucide-react';
 
 interface DeepDiveBorneoProps {
@@ -24,8 +27,13 @@ const DeepDiveBorneo: React.FC<DeepDiveBorneoProps> = ({ onNavigate }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-               <div className="inline-block px-4 py-2 bg-emerald-900 border border-borneo-lime text-borneo-lime rounded-lg text-base font-bold uppercase tracking-wider shadow-lg">
-                  Food Estate Project
+               <div className="flex gap-3">
+                  <div className="inline-block px-4 py-2 bg-emerald-900 border border-borneo-lime text-borneo-lime rounded-lg text-base font-bold uppercase tracking-wider shadow-lg">
+                     Food Estate Project
+                  </div>
+                  <div className="inline-block px-4 py-2 bg-white/10 border border-white/20 text-white rounded-lg text-base font-bold uppercase tracking-wider shadow-lg flex items-center gap-2">
+                     <Users size={18} /> Total 653 Unit
+                  </div>
                </div>
                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold leading-tight drop-shadow-xl">
                  Miliki Tanah Kavling Produktif di <br className="hidden lg:block"/>
@@ -152,7 +160,7 @@ const DeepDiveBorneo: React.FC<DeepDiveBorneoProps> = ({ onNavigate }) => {
                   <h3 className="font-bold text-2xl mb-2 text-white">Bagi Hasil Jangka Panjang</h3>
                   <p className="text-slate-100 text-lg mb-6 font-medium">Mulai Bulan ke-4 dst.</p>
                   <div className="bg-brand-primary p-6 rounded-xl shadow-lg mt-auto text-center">
-                     <span className="block text-3xl font-bold text-white mb-1">Rp 400.000++</span>
+                     <span className="block text-3xl font-bold text-white mb-1">Rp 400.000</span>
                      <span className="text-base text-emerald-100 font-bold uppercase tracking-wide">Fix & Flat + Kenaikan 3%/thn</span>
                   </div>
                </div>
@@ -172,12 +180,69 @@ const DeepDiveBorneo: React.FC<DeepDiveBorneoProps> = ({ onNavigate }) => {
          </div>
       </section>
 
-      {/* 5. LINK TO MASTER SITEPLAN (NEW REPLACEMENT SECTION) */}
-      <section className="py-20 bg-white">
+      {/* 5. GALLERY SECTION */}
+      <section className="py-20 bg-white border-t border-stone-200">
+         <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-12">
+               <span className="text-borneo-orange font-bold uppercase tracking-widest text-sm block mb-2">
+                  <Camera size={20} className="inline-block mr-2" /> Gallery
+               </span>
+               <h2 className="font-serif text-3xl font-bold text-slate-900">Galeri Kebun & Panen Raya</h2>
+               <p className="text-slate-800 text-xl font-medium max-w-2xl mx-auto mt-4">
+                  Melihat langsung potensi lahan yang luas, subur, dan dikelola secara profesional.
+               </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* Image 1 - Plantation Overview */}
+                <div className="group relative overflow-hidden rounded-2xl shadow-lg h-72 lg:col-span-2">
+                   <img src="https://picsum.photos/id/292/1200/600" alt="Plantation Overview" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <span className="text-white font-bold text-lg">Hamparan Lahan Food Estate Borneo (11 Ha)</span>
+                   </div>
+                </div>
+                
+                {/* Image 2 - Chili Harvest */}
+                <div className="group relative overflow-hidden rounded-2xl shadow-lg h-72">
+                   <img src="https://picsum.photos/id/299/800/600" alt="Chili Harvest" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <span className="text-white font-bold text-lg">Panen Raya Cabai</span>
+                   </div>
+                </div>
+
+                {/* Image 3 - Tech */}
+                <div className="group relative overflow-hidden rounded-2xl shadow-lg h-72">
+                   <img src="https://picsum.photos/id/400/800/600" alt="Agri Tech" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <span className="text-white font-bold text-lg">Teknologi Pemantauan Drone</span>
+                   </div>
+                </div>
+
+                {/* Image 4 - Warehouse */}
+                <div className="group relative overflow-hidden rounded-2xl shadow-lg h-72">
+                   <img src="https://picsum.photos/id/401/800/600" alt="Warehouse" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <span className="text-white font-bold text-lg">Gudang & Sentra Distribusi</span>
+                   </div>
+                </div>
+
+                {/* Image 5 - Team */}
+                <div className="group relative overflow-hidden rounded-2xl shadow-lg h-72">
+                   <img src="https://picsum.photos/id/402/800/600" alt="Team" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <span className="text-white font-bold text-lg">Dikelola Tim Ahli Agronomi</span>
+                   </div>
+                </div>
+            </div>
+         </div>
+      </section>
+
+      {/* 6. LINK TO MASTER SITEPLAN (NEW REPLACEMENT SECTION) */}
+      <section className="py-20 bg-stone-100 border-t border-stone-200">
          <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="font-serif text-3xl font-bold text-slate-900 mb-6">Visualisasi Lahan 11 Hektar</h2>
             <p className="text-slate-800 text-xl mb-10 font-medium">
-               Food Estate Borneo adalah proyek masif. Lihat pembagian zona dan ketersediaan lahan promo.
+               Food Estate Borneo adalah proyek masif. Lihat pembagian zona dan ketersediaan lahan promo (Total 653 Unit).
             </p>
             <button 
                onClick={() => onNavigate('siteplan')}
