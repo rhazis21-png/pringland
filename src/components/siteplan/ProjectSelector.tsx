@@ -7,6 +7,7 @@ type RegionTab = 'jogja' | 'bogor' | 'borneo';
 
 interface ProjectSelectorProps {
   activeRegion: RegionTab;
+  onProjectSelect?: (project: Project) => void;
 }
 
 /**
@@ -45,7 +46,10 @@ const regionDescription: Record<RegionTab, string> = {
   borneo: 'Food estate dan kawasan strategis di sekitar IKN (Borneo).',
 };
 
-const ProjectSelector: React.FC<ProjectSelectorProps> = ({ activeRegion }) => {
+const ProjectSelector: React.FC<ProjectSelectorProps> = ({
+  activeRegion,
+  onProjectSelect,
+}) => {
   const { projects, isLoading, isError, errorMessage, isSupabaseConfigured } = useProjects();
   const seniorTheme = useSeniorTheme();
 
@@ -138,6 +142,7 @@ const ProjectSelector: React.FC<ProjectSelectorProps> = ({ activeRegion }) => {
               <button
                 key={project.id}
                 type="button"
+                onClick={() => onProjectSelect?.(project)}
                 className={`w-full text-left bg-white rounded-3xl p-6 md:p-8 shadow-xl border-2 border-stone-200 hover:shadow-2xl transition-transform duration-300 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-emerald-300 ${
                   isFeatured ? 'border-4 border-emerald-500' : ''
                 }`}
