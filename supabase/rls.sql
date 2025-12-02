@@ -64,6 +64,31 @@ using (
   )
 );
 
+-- Marketing agents can update status of units they have booked
+-- This supports:
+-- - Setting unit status to 'booking' when creating a booking
+-- - Setting unit status to 'available' when cancelling a booking
+-- - Setting unit status to 'sold' when marking a unit as sold
+create policy if not exists "Marketing agents can update status of own booked units"
+on public.units
+for update
+using (
+  exists (
+    select 1
+    from public.bookings b
+    where b.unit_id = units.id
+      and b.marketing_agent_id = auth.uid()
+  )
+)
+with check (
+  exists (
+    select 1
+    from public.bookings b
+    where b.unit_id = units.id
+      and b.marketing_agent_id = auth.uid()
+  )
+);
+
 ------------------------------------------------------------
 -- BOOKINGS
 ------------------------------------------------------------
@@ -86,6 +111,12 @@ with check (auth.uid() = marketing_agent_id);
 create policy if not exists "Marketing agents can update own bookings"
 on public.bookings
 for update
+using (auth.uid() = marketing_agent_id);
+
+-- Marketing agents can delete their own bookings (for cancellation)
+create policy if not exists "Marketing agents can delete own bookings"
+on public.bookings
+for delete
 using (auth.uid() = marketing_agent_id);
 
 -- Superadmin full access to bookings
