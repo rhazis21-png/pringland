@@ -4,14 +4,14 @@
 -- Buckets used in this project:
 --   - documents           : KK/KTP and other sensitive documents
 --   - project-backgrounds : background images for Canvas Editor
---   - project-thumbnails  : thumbnails for project cards (public homepage)
+--   - thumbnails          : thumbnails for project cards (public homepage)
 --
 -- Buckets must be created via Supabase Dashboard or CLI.
 --
 -- Example using Supabase CLI:
 --   supabase storage create-bucket documents --public=false
 --   supabase storage create-bucket project-backgrounds --public=false
---   supabase storage create-bucket project-thumbnails --public=true
+--   supabase storage create-bucket thumbnails --public=true
 --
 -- After creating buckets, you can apply the following policies
 -- in the SQL editor to control access.
@@ -104,7 +104,7 @@ create policy if not exists "Public can read project thumbnails"
 on storage.objects
 for select
 using (
-  bucket_id = 'project-thumbnails'
+  bucket_id = 'thumbnails'
 );
 
 -- Superadmin manage thumbnails
@@ -112,14 +112,14 @@ create policy if not exists "Superadmin manage project thumbnails"
 on storage.objects
 for all
 using (
-  bucket_id = 'project-thumbnails'
+  bucket_id = 'thumbnails'
   and exists (
     select 1 from public.admin_users au
     where au.id = auth.uid()
   )
 )
 with check (
-  bucket_id = 'project-thumbnails'
+  bucket_id = 'thumbnails'
   and exists (
     select 1 from public.admin_users au
     where au.id = auth.uid()
