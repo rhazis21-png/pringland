@@ -9,36 +9,36 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   return (
     <div className="relative w-full h-screen overflow-hidden flex flex-col bg-slate-900">
-      {/* Full Background Video/Image */}
+      {/* Background Image - Static Zoom (No dizzying Kenburns) */}
       <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+        <div className="absolute inset-0 bg-black/60 z-10"></div> {/* Darker overlay for better text contrast */}
         <img 
           src="https://picsum.photos/id/1029/1920/1080" 
           alt="Corporate Drone View" 
-          className="w-full h-full object-cover scale-105 animate-[kenburns_30s_infinite_alternate]"
+          className="w-full h-full object-cover scale-105" 
         />
       </div>
 
       {/* Center Content Overlay */}
-      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto">
-        <div className="mb-6 animate-fade-in-up">
-           <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 text-sm tracking-widest uppercase font-semibold">
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto">
+        <div className="mb-6">
+           <span className="inline-block py-2 px-4 rounded-lg bg-emerald-900/80 border border-emerald-500 text-emerald-100 text-base tracking-widest uppercase font-bold shadow-lg">
              PT. Lumbung Pangan Mataram
            </span>
         </div>
-        <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white font-bold mb-8 drop-shadow-xl leading-tight animate-fade-in-up delay-100">
+        <h1 className="font-serif text-3xl md:text-5xl lg:text-6xl text-white font-bold mb-8 drop-shadow-2xl leading-tight">
           {HERO_COPY.headline}
         </h1>
-        <p className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl drop-shadow-md leading-relaxed animate-fade-in-up delay-200">
+        <p className="text-lg md:text-2xl text-white mb-12 max-w-3xl drop-shadow-lg leading-relaxed font-medium">
           {HERO_COPY.subHeadline}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-300">
+        <div className="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
           <button 
             onClick={() => {
                const el = document.getElementById('problem-solution');
                el?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-brand-primary hover:bg-brand-dark text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-[0_0_20px_rgba(46,204,113,0.5)] flex items-center justify-center gap-2"
+            className="bg-brand-primary hover:bg-brand-dark text-white px-8 py-4 rounded-xl font-bold text-xl transition-all shadow-xl border-b-4 border-emerald-700 active:border-b-0 active:translate-y-1"
           >
             {HERO_COPY.cta}
           </button>
@@ -47,17 +47,17 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                const el = document.getElementById('portfolio-selector');
                el?.scrollIntoView({ behavior: 'smooth' });
             }}
-             className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all flex items-center justify-center gap-2"
+             className="bg-white hover:bg-stone-100 text-slate-900 px-8 py-4 rounded-xl font-bold text-xl transition-all border-b-4 border-slate-300 active:border-b-0 active:translate-y-1"
           >
-             Lihat Portofolio Project
+             Lihat Pilihan Project
           </button>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 animate-bounce cursor-pointer" 
+      {/* Scroll Indicator - Removed Animation for steadiness */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 cursor-pointer p-4 bg-black/30 rounded-full hover:bg-black/50 transition-colors" 
            onClick={() => document.getElementById('problem-solution')?.scrollIntoView({ behavior: 'smooth' })}>
-        <ArrowDown className="text-white/70 w-8 h-8" />
+        <ArrowDown className="text-white w-8 h-8" />
       </div>
     </div>
   );

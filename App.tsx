@@ -6,12 +6,13 @@ import PortfolioSelector from './components/PortfolioSelector';
 import DeepDiveJogja from './components/DeepDiveJogja';
 import DeepDiveBogor from './components/DeepDiveBogor';
 import DeepDiveBorneo from './components/DeepDiveBorneo';
+import SitePlanPage from './components/SitePlanPage';
 import TrustSection from './components/TrustSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 import { MessageCircle } from 'lucide-react';
 
-type Page = 'home' | 'jogja' | 'bogor' | 'borneo';
+type Page = 'home' | 'jogja' | 'bogor' | 'borneo' | 'siteplan';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -51,6 +52,10 @@ const App: React.FC = () => {
 
         {currentPage === 'borneo' && (
           <DeepDiveBorneo onNavigate={navigateTo} />
+        )}
+
+        {currentPage === 'siteplan' && (
+          <SitePlanPage />
         )}
       </main>
 

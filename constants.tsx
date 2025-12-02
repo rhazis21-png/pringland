@@ -2,29 +2,29 @@ import { Product, Testimonial } from './types';
 import { Sprout, Briefcase, Coins, ShieldCheck, TrendingUp, Sun, Droplets, MapPin, Home, Mountain, GraduationCap } from 'lucide-react';
 
 export const HERO_COPY = {
-  headline: "Mewujudkan Kedaulatan Pangan Melalui Integrasi Properti Produktif.",
-  subHeadline: "PT. Lumbung Pangan Mataram hadir sebagai pelopor ekosistem agribisnis modern. Kami mengubah lahan tidur menjadi aset produktif bernilai tinggi bagi investor dan ketahanan pangan nasional.",
-  cta: "Pelajari Visi Kami"
+  headline: "Persiapkan Masa Pensiun Tenang dengan Aset Produktif.",
+  subHeadline: "Miliki aset tanah SHM dan peternakan yang dikelola profesional. Nikmati bagi hasil rutin bulanan tanpa repot mengurus operasional, sebagai warisan terbaik untuk keluarga.",
+  cta: "Lihat Program Pensiun"
 };
 
 export const PROBLEM_SOLUTION = {
-  headline: "Lebih Dari Sekadar Developer Properti.",
-  body: "Pring Land (by PT. Lumbung Pangan Mataram) bukan hanya menjual tanah kavling. Kami membangun sebuah Ekosistem Pertanian & Peternakan Terpadu. Berangkat dari visi besar pemerintah dalam peningkatan ketahanan pangan nasional, kami menawarkan solusi investasi di mana Anda memiliki aset fisik (Tanah SHM) sekaligus menjadi bagian dari rantai pasok pangan Indonesia.",
+  headline: "Investasi Aman & Nyata Untuk Masa Depan.",
+  body: "Pring Land (by PT. Lumbung Pangan Mataram) bukan sekadar menjual tanah. Kami membangun ekosistem di mana Anda memiliki aset fisik (Tanah Sertifikat Hak Milik) yang terus menghasilkan. Ini adalah solusi bagi Anda yang ingin dana pensiun aman dari inflasi, tanpa harus capek bekerja di hari tua.",
   coreValues: [
     {
       icon: <ShieldCheck className="w-8 h-8 text-brand-primary" />,
-      title: "Legalitas & Keamanan Aset",
-      desc: "Kepemilikan tanah dijamin dengan SHM dan proses transaksi transparan melalui Notaris (PPJB & SKPU)."
+      title: "Legalitas SHM Aman",
+      desc: "Aset tanah 100% atas nama Anda (Sertifikat Hak Milik). Transaksi transparan di hadapan Notaris (PPJB & SKPU)."
     },
     {
       icon: <Briefcase className="w-8 h-8 text-brand-primary" />,
       title: "Manajemen Profesional",
-      desc: "Investor tidak perlu repot. Operasional dikelola penuh oleh tenaga ahli peternakan dan pertanian."
+      desc: "Anda terima beres. Seluruh operasional kandang dan kebun dikelola ahli. Laporan dikirim rutin ke WhatsApp Anda."
     },
     {
-      icon: <GraduationCap className="w-8 h-8 text-brand-primary" />,
-      title: "Integrasi Edukasi & Wisata",
-      desc: "Kawasan dirancang dengan konsep Agrowisata, meningkatkan nilai aset tanah (Capital Gain)."
+      icon: <Coins className="w-8 h-8 text-brand-primary" />,
+      title: "Warisan Produktif",
+      desc: "Aset properti yang nilainya naik terus, ditambah hasil panen rutin yang bisa diwariskan ke anak cucu."
     }
   ]
 };
@@ -35,9 +35,9 @@ export const PRODUCTS: Product[] = [
     title: "Pring Land Jogja",
     subtitle: "Regional Hub (Turi & Patuk)",
     location: "Sleman & Gunungkidul",
-    focus: "Villa Ternak Premium & Wisata",
+    focus: "Villa Ternak & Wisata",
     priceStart: "Mulai Rp 79 Juta",
-    targetAudience: "Investor Menengah, Pensiunan",
+    targetAudience: "Persiapan Pensiun",
     image: "https://picsum.photos/id/124/800/600",
     colorTheme: 'jogja'
   },
@@ -48,7 +48,7 @@ export const PRODUCTS: Product[] = [
     location: "Leuwiliang, Bogor",
     focus: "Supply Jabodetabek",
     priceStart: "Hubungi Marketing",
-    targetAudience: "Investor Jabodetabek",
+    targetAudience: "Investasi Jarak Dekat",
     image: "https://picsum.photos/id/142/800/600",
     colorTheme: 'bogor'
   },
@@ -57,9 +57,9 @@ export const PRODUCTS: Product[] = [
     title: "Pring Land Borneo",
     subtitle: "Food Estate IKN",
     location: "Tanjung Selor, Kaltara",
-    focus: "Growth & Capital Gain",
+    focus: "Aset Jangka Panjang",
     priceStart: "Promo Rp 25 Juta",
-    targetAudience: "Visioner IKN, Pemula",
+    targetAudience: "Tabungan Masa Depan",
     image: "https://picsum.photos/id/292/800/600",
     colorTheme: 'borneo'
   }
@@ -67,19 +67,19 @@ export const PRODUCTS: Product[] = [
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "Bpk. Hartono",
-    role: "Investor Jogja",
-    quote: "Tempatnya bersih, tidak bau. Saya ambil 2 unit di Jogja karena konsep Villa-nya bagus untuk masa pensiun saya."
+    name: "Bpk. Hartono (58 Th)",
+    role: "Pensiunan BUMN",
+    quote: "Saya cari kesibukan positif tapi tidak mau capek fisik. Pring Land solusinya, legalitas SHM sudah saya cek di Notaris aman."
   },
   {
-    name: "Ibu Sarah",
-    role: "Investor Bogor",
-    quote: "Dekat dari Jakarta, jadi saya bisa survei kapan saja. Legalitas SHM bikin tenang."
+    name: "Ibu Sarah (52 Th)",
+    role: "Wiraswasta",
+    quote: "Lokasi Bogor dekat dari rumah. Saya bisa ajak cucu lihat peternakan. Passive income-nya lumayan buat tambah belanja dapur."
   },
   {
-    name: "Aditya",
-    role: "Investor Borneo",
-    quote: "Investasi 25 juta di Borneo buat tabungan anak. Daripada uang habis konsumtif, mending jadi tanah di penyangga IKN."
+    name: "Bpk. Wijaya (60 Th)",
+    role: "Pensiunan Guru",
+    quote: "Daripada uang pensiun habis tidak jelas, saya belikan tanah di Borneo untuk warisan anak bungsu saya nanti."
   }
 ];
 

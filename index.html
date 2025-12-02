@@ -48,14 +48,15 @@
       }
       /* Custom scrollbar for webkit */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 12px; /* Wider scrollbar for easier grabbing */
       }
       ::-webkit-scrollbar-track {
         background: #f1f1f1;
       }
       ::-webkit-scrollbar-thumb {
         background: #2ecc71;
-        border-radius: 4px;
+        border-radius: 6px;
+        border: 2px solid #f1f1f1;
       }
       ::-webkit-scrollbar-thumb:hover {
         background: #27ae60;
@@ -72,7 +73,7 @@
 }
 </script>
 </head>
-  <body class="bg-stone-50 text-slate-800 antialiased selection:bg-brand-primary selection:text-white">
+  <body class="bg-stone-50 text-slate-900 antialiased selection:bg-brand-primary selection:text-white text-base md:text-lg">
     <div id="root"></div>
   </body>
 </html>
